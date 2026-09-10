@@ -1,0 +1,37 @@
+{
+  "name": "homeoffice-tracker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "react-router build",
+    "dev": "node --env-file-if-exists=.env node_modules/.bin/react-router dev",
+    "start": "node --env-file-if-exists=.env node_modules/.bin/react-router-serve ./build/server/index.js",
+    "seed": "node --env-file-if-exists=.env scripts/seed.mjs",
+    "test": "vitest run",
+    "typecheck": "react-router typegen && tsc"
+  },
+  "dependencies": {
+    "@react-router/node": "^8",
+    "@react-router/serve": "^8",
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^13.0.3",
+    "date-holidays": "^3.36.1",
+    "isbot": "^5.1.36",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router": "^8"
+  },
+  "devDependencies": {
+    "@react-router/dev": "^8",
+    "@tailwindcss/vite": "^4.2.2",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^22",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^5.9.3",
+    "vite": "^8.0.3",
+    "vitest": "^5.0.0"
+  }
+}
