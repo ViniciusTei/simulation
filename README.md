@@ -75,6 +75,12 @@ run `npm run seed` once, then `npm start` behind a reverse proxy (nginx/
 Caddy) with TLS. Keep `data/app.db` on a persistent volume/disk — it's the
 only state the app has.
 
+Behind a TLS-terminating proxy, the public hostname must be listed in
+`allowedActionOrigins` in `react-router.config.ts` (or passed via the
+`ALLOWED_ACTION_ORIGINS` env var **at build time**), otherwise React
+Router's CSRF check rejects every form POST with "Bad Request". The proxy
+should also forward the `Host` header.
+
 ## How the allowance/insights are computed
 
 - **Used / remaining**: every row in `home_office_days` counts, whether the
